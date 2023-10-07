@@ -134,10 +134,10 @@ window.addEventListener('message', function ({ data: message }) {
 
 const boardUrls = [
     "HOME",
-    "https://bdmp-003.cafe24.com/bizdemo151251/notice.php",
-    "https://bdmp-003.cafe24.com/bizdemo151251/member/board.php",
-    "https://bdmp-003.cafe24.com/bizdemo151251/regular.php",
-    "https://bdmp-003.cafe24.com/bizdemo151251/notice.php"
+    "//bdmp-003.cafe24.com/bizdemo151251/notice.php",
+    "//bdmp-003.cafe24.com/bizdemo151251/member/board.php",
+    "//bdmp-003.cafe24.com/bizdemo151251/regular.php",
+    "//bdmp-003.cafe24.com/bizdemo151251/base.php"
 ]
 
 function boardChange(id) {
