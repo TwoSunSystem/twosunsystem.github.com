@@ -133,6 +133,8 @@ window.addEventListener('message', function ({ data: message }) {
     frameCurrentUrl = message.href.indexOf('?') === -1 ? message.href : message.href.substring(0, message.href.indexOf('?'))
 }, false)
 
+document.addEventListener('DOMContentLoaded', function () { boardChange(1) })
+
 const boardUrls = [
     "HOME",
     "//bdmp-003.cafe24.com/bizdemo151251/notice.php",
