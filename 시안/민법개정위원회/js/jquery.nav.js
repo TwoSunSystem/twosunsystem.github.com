@@ -125,10 +125,8 @@
 					returnValue = section
 				}
 			}
-
-			if (returnValue.includes("menu")) return "menu" + boardUrls.findIndex((boardUrl) => frameCurrentUrl.includes(boardUrl))
-
-			return returnValue
+			
+			return returnValue.includes("board") ? "board" + boardPathIdx : returnValue
 		},
 
 		handleClick: function (e) {
