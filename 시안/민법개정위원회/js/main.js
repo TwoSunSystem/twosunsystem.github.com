@@ -125,7 +125,7 @@ function progress(percent, $element) {
 
 
 const boardFrame = document.getElementById('boardFrame')
-let boardPath
+let boardPathIdx
 
 window.addEventListener('message', function ({ data: message }) {
     const frameUrl = new URL(message.href)
@@ -134,13 +134,13 @@ window.addEventListener('message', function ({ data: message }) {
         location.href = frameUrl.href
     }
     boardFrame.style.height = message.height + 'px'
-    boardPath = frameUrl.pathname
+    boardPathIdx = boardPaths.indexOf(frameUrl.pathname)
 }, false)
 
 document.addEventListener('DOMContentLoaded', function () { boardChange(1) })
 
 const boardHost = "bdmp-003.cafe24.com"
-const boardPath = [
+const boardPaths = [
     "_HOME",
     "/bizdemo151251/notice.php",
     "/bizdemo151251/member/board.php",
@@ -151,7 +151,7 @@ const boardPath = [
 function boardChange(id) {
     const frameUrl = new URL(location.href)
     frameUrl.host = boardHost
-    frameUrl.pathname = boardPath[id]
+    frameUrl.pathname = boardPaths[id]
     frameUrl.search = ""
     boardFrame.src = frameUrl.href
     boardFrame.parentElement.id = "menu" + id
