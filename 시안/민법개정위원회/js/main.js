@@ -128,6 +128,7 @@ const boardFrame = document.getElementById('boardFrame')
 let frameCurrentUrl = boardFrame.src
 
 window.addEventListener('message', function ({ data: message }) {
+    if (data.relocate) location.href = message.href
     boardFrame.style.height = message.height + 'px'
     frameCurrentUrl = message.href.indexOf('?') === -1 ? message.href : message.href.substring(0, message.href.indexOf('?'))
 }, false)
