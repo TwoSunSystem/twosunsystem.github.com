@@ -92,7 +92,7 @@
 					self.docHeight = docHeight
 					self.getPositions()
 				}
-			}, 250)
+			}, 50)
 		},
 
 		getHash: function ($link) {
