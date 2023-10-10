@@ -125,25 +125,34 @@ function progress(percent, $element) {
 
 
 const boardFrame = document.getElementById('boardFrame')
-let frameCurrentUrl = boardFrame.src
+let boardPath
 
 window.addEventListener('message', function ({ data: message }) {
-    if (message.relocate) location.href = message.href
+    const frameUrl = new URL(message.href)
+    if (message.relocate) {
+        frameUrl.searchParams.append("relocated", "true")
+        location.href = frameUrl.href
+    }
     boardFrame.style.height = message.height + 'px'
-    frameCurrentUrl = message.href.indexOf('?') === -1 ? message.href : message.href.substring(0, message.href.indexOf('?'))
+    boardPath = frameUrl.pathname
 }, false)
 
 document.addEventListener('DOMContentLoaded', function () { boardChange(1) })
 
-const boardUrls = [
-    "HOME",
-    "//bdmp-003.cafe24.com/bizdemo151251/notice.php",
-    "//bdmp-003.cafe24.com/bizdemo151251/member/board.php",
-    "//bdmp-003.cafe24.com/bizdemo151251/regular.php",
-    "//bdmp-003.cafe24.com/bizdemo151251/base.php"
+const boardHost = "bdmp-003.cafe24.com"
+const boardPath = [
+    "_HOME",
+    "/bizdemo151251/notice.php",
+    "/bizdemo151251/member/board.php",
+    "/bizdemo151251/regular.php",
+    "/bizdemo151251/base.php"
 ]
 
 function boardChange(id) {
-    boardFrame.src = boardUrls[id]
+    const frameUrl = new URL(location.href)
+    frameUrl.host = boardHost
+    frameUrl.pathname = boardPath[id]
+    frameUrl.search = ""
+    boardFrame.src = frameUrl.href
     boardFrame.parentElement.id = "menu" + id
 }
