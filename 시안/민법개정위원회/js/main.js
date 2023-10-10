@@ -125,7 +125,7 @@ function progress(percent, $element) {
 
 
 const boardFrame = document.getElementById('boardFrame')
-let boardPathIdx
+let boardId
 
 window.addEventListener('message', function ({ data: message }) {
     const frameUrl = new URL(message.href)
@@ -134,7 +134,7 @@ window.addEventListener('message', function ({ data: message }) {
         location.href = frameUrl.href
     }
     boardFrame.style.height = message.height + 'px'
-    boardPathIdx = boardPaths.indexOf(frameUrl.pathname)
+    boardId = boardPaths.indexOf(frameUrl.pathname)
 }, false)
 
 document.addEventListener('DOMContentLoaded', function () { boardChange(1) })
