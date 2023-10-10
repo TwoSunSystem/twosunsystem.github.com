@@ -126,7 +126,7 @@
 				}
 			}
 
-			if (returnValue.includes("menu")) return "menu" + boardUrls.indexOf(frameCurrentUrl)
+			if (returnValue.includes("menu")) return "menu" + boardUrls.findIndex((boardUrl) => frameCurrentUrl.includes(boardUrl))
 
 			return returnValue
 		},
