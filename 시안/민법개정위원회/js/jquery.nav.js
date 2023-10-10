@@ -126,7 +126,7 @@
 				}
 			}
 			
-			return returnValue.includes("board") ? "board" + boardPathIdx : returnValue
+			return returnValue.includes("board") ? "board" + boardId : returnValue
 		},
 
 		handleClick: function (e) {
