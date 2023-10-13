@@ -141,5 +141,8 @@ function boardChange(id) {
     frameUrl.pathname = boardPaths[id]
     frameUrl.search = ""
     boardFrame.src = frameUrl.href
-    boardFrame.parentElement.id = "board" + id
+    if (id === 2 || id === 3)
+        boardFrame.parentElement.id = "board2&3"
+    else
+        boardFrame.parentElement.id = "board" + id
 }
