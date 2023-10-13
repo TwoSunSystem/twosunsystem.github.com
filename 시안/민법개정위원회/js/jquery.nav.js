@@ -126,7 +126,8 @@
 				}
 			}
 
-			return returnValue.includes("board") ? "board" + boardId : returnValue
+			if (returnValue.includes("board")) return boardId === 2 || boardId === 3 ? "board2&3" : "board" + boardId
+		        return returnValue
 		},
 
 		handleClick: function (e) {
