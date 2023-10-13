@@ -125,7 +125,7 @@ window.addEventListener('message', function ({ data: message }) {
     boardId = boardPaths.indexOf(frameUrl.pathname)
 }, false)
 
-document.addEventListener('DOMContentLoaded', function () { boardChange(1) })
+document.addEventListener('DOMContentLoaded', function () { boardChange(0) })
 
 const boardHost = "bdmp-003.cafe24.com"
 const boardPaths = [
