@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () { boardChange(1) })
 
 const boardHost = "bdmp-003.cafe24.com"
 const boardPaths = [
-    "_HOME",
     "/bizdemo151251/notice.php",
     "/bizdemo151251/member/board.php",
     "/bizdemo151251/regular.php",
