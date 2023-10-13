@@ -12,13 +12,10 @@ $(function () {
     /* ========================================================================= */
 
     jQuery(window).scroll(function () {
-        if (jQuery(window).scrollTop() > 400) {
-            jQuery("#navigation").css("background-color", "rgba(0, 0, 0, 0.85)")
+        if (jQuery(window).scrollTop() > 400)
             jQuery("#navigation").addClass("animated-nav")
-        } else {
-            jQuery("#navigation").css("background-color", "transparent")
+        else
             jQuery("#navigation").removeClass("animated-nav")
-        }
     })
 
     $('#nav').onePageNav({
