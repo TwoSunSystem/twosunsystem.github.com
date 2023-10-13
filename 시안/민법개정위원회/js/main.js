@@ -23,16 +23,7 @@ $(function () {
         scrollSpeed: 950,
         scrollThreshold: 1
     })
-
-    // Slider Height
-    var slideHeight = $(window).height()
-    $('#home-carousel .carousel-inner .item, #home-carousel .video-container').css('height', slideHeight)
-
-    $(window).resize(function () {
-        'use strict',
-            $('#home-carousel .carousel-inner .item, #home-carousel .video-container').css('height', slideHeight)
-    })
-
+    
     // portfolio filtering
 
     $("#projects").mixItUp()
